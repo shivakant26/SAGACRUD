@@ -1,4 +1,9 @@
-import { ADD_DATA_SUCCESS , DELETE_DATA_SUCCESS , EDIT_DATA_SUCCESS, UPDATE_DATA_SUCCESS } from "../ActionType";
+import { 
+    ADD_DATA_SUCCESS ,
+    DELETE_DATA_SUCCESS ,
+    EDIT_DATA_SUCCESS,
+    UPDATE_DATA_SUCCESS
+ } from "../ActionType";
 
 const initialState = {
     data:[
@@ -18,7 +23,6 @@ const reducer = (state = initialState , action ) =>{
                 data:[...add_list]
             }
             break;
-
             case DELETE_DATA_SUCCESS:
                 const delete_list = state.data;
                 delete_list.splice(action.payload,1)
@@ -50,6 +54,7 @@ const reducer = (state = initialState , action ) =>{
                     })
                     return{
                         ...state,
+                        isEdit:null,
                         data:[...Update_list]
                     }
                     break;
