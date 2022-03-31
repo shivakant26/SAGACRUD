@@ -19,15 +19,14 @@ const Home = () =>{
         const data = {EmpCode,EmpAge,EmpName,EmpCompany}
         if(Editable_object){
             dispatch(Update_Data(data , id))
-            setEmpCode("");
-            setEmpName("");
-            setEmpAge("");
-            setEmpCompany("");
         }else{
             dispatch(Add_Data(data));
         }
+        setEmpCode("");
+        setEmpName("");
+        setEmpAge("");
+        setEmpCompany("");
 
-        document.getElementById("myform").reset();
     }
     const Delete = (i) =>{
         dispatch(Delete_Data(i))
